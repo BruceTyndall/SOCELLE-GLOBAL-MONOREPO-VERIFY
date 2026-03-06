@@ -1,0 +1,12 @@
+# Cloudflare Pages — SOCELLE GLOBAL VERIFY
+# Deploy target: SOCELLE-WEB (Vite + React + Supabase)
+# Docs: https://developers.cloudflare.com/pages/
+
+name = "socelle-global-verify"
+pages_build_output_dir = "SOCELLE-WEB/dist"
+
+[build]
+command = "cd SOCELLE-WEB && npm ci && npm run build"
+
+[build.environment]
+NODE_VERSION = "20"
