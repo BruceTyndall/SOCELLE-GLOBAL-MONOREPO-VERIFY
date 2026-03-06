@@ -1,0 +1,17 @@
+node_modules
+.turbo
+dist
+.next
+out
+*.env.local
+.DS_Store
+# Build artifacts
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.g.dart
+# Local env files — never commit
+.env
+# macOS
+**/.DS_Store

@@ -1,0 +1,11 @@
+W10-03: Intelligence Hub live wire — trending_category + pro-* token fix
+
+- useIntelligence.ts: trending_category now derived from most frequent
+  category in live market_signals (was always mockMarketPulse value)
+- MarketPulseBar.tsx: replace pro-charcoal → mn-dark, pro-gold → accent
+  (pro-* token violations on public-facing component)
+- PREVIEW banner already correct: shows only when !isLive (Supabase down)
+- 10 live signals in market_signals table, isLive=true in production
+- npx tsc --noEmit: zero errors | npm run build: 3.46s
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>

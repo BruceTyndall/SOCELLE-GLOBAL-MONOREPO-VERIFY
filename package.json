@@ -1,0 +1,30 @@
+{
+    "name": "socelle-monorepo",
+    "private": true,
+    "version": "0.0.0",
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "SOCELLE-WEB"
+    ],
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "lint": "turbo run lint",
+        "typecheck": "turbo run typecheck",
+        "dev:marketing": "turbo run dev --filter=marketing-site",
+        "dev:portal": "turbo run dev --filter=web-portal",
+        "build:marketing": "turbo run build --filter=marketing-site",
+        "build:portal": "turbo run build --filter=web-portal",
+        "dev:web": "cd SOCELLE-WEB && npm run dev",
+        "build:web": "cd SOCELLE-WEB && npm ci && npm run build",
+        "typecheck:web": "cd SOCELLE-WEB && npx tsc --noEmit -p tsconfig.app.json"
+    },
+    "devDependencies": {
+        "turbo": "^2.3.3"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "packageManager": "npm@10.8.1"
+}
