@@ -21,8 +21,7 @@ export async function scrapeGoogleReviews(
   businessName: string,
   city: string
 ): Promise<GoogleReviewData> {
-    `[Enrichment] scrapeGoogleReviews called for "${businessName}" in ${city} — returning mock data`
-  );
+  console.log(`[Enrichment] scrapeGoogleReviews called for "${businessName}" in ${city} — returning mock data`);
 
   // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 200));
@@ -46,8 +45,7 @@ export async function scrapeGoogleReviews(
  * STUB: Returns mock data. V2 will use headless browser or scraping service.
  */
 export async function scrapeWebsite(url: string): Promise<WebsiteAnalysis> {
-    `[Enrichment] scrapeWebsite called for "${url}" — returning mock data`
-  );
+  console.log(`[Enrichment] scrapeWebsite called for "${url}" — returning mock data`);
 
   await new Promise((resolve) => setTimeout(resolve, 300));
 
@@ -74,8 +72,7 @@ export async function scrapeWebsite(url: string): Promise<WebsiteAnalysis> {
 export async function checkSocialPresence(
   handle: string
 ): Promise<SocialPresence> {
-    `[Enrichment] checkSocialPresence called for "@${handle}" — returning mock data`
-  );
+  console.log(`[Enrichment] checkSocialPresence called for "@${handle}" — returning mock data`);
 
   await new Promise((resolve) => setTimeout(resolve, 150));
 
@@ -96,8 +93,7 @@ export async function checkSocialPresence(
 export async function scrapeReviewPlatforms(
   businessName: string
 ): Promise<ReviewPlatformData> {
-    `[Enrichment] scrapeReviewPlatforms called for "${businessName}" — returning mock data`
-  );
+  console.log(`[Enrichment] scrapeReviewPlatforms called for "${businessName}" — returning mock data`);
 
   await new Promise((resolve) => setTimeout(resolve, 250));
 
@@ -122,10 +118,8 @@ export async function scrapeReviewPlatforms(
 export async function buildEnrichmentProfile(
   operatorId: string
 ): Promise<OperatorEnrichment> {
-    `[Enrichment] buildEnrichmentProfile called for operator "${operatorId}" — returning mock profile`
-  );
-    `[Enrichment] In production, this will call: scrapeGoogleReviews, scrapeWebsite, checkSocialPresence, scrapeReviewPlatforms`
-  );
+  console.log(`[Enrichment] buildEnrichmentProfile called for operator "${operatorId}" — returning mock profile`);
+  console.log(`[Enrichment] In production, this will call: scrapeGoogleReviews, scrapeWebsite, checkSocialPresence, scrapeReviewPlatforms`);
 
   await new Promise((resolve) => setTimeout(resolve, 100));
 
@@ -139,10 +133,7 @@ export async function buildEnrichmentProfile(
  * STUB: Logs intent only. V2: Supabase cron job or Edge Function scheduler.
  */
 export function scheduleEnrichment(): void {
-    '[Enrichment] Enrichment scheduler configured for 7-day cycle'
-  );
-    '[Enrichment] Schedule: Google Reviews (daily), Website (weekly), Social (weekly), Review Platforms (weekly)'
-  );
-    '[Enrichment] Priority queue: high-value operators enriched first'
-  );
+  console.log('[Enrichment] Enrichment scheduler configured for 7-day cycle');
+  console.log('[Enrichment] Schedule: Google Reviews (daily), Website (weekly), Social (weekly), Review Platforms (weekly)');
+  console.log('[Enrichment] Priority queue: high-value operators enriched first');
 }

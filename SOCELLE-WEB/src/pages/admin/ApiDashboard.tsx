@@ -298,22 +298,22 @@ export default function ApiDashboard() {
         {/* Summary Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatCard
-            title="Active Clients"
+            label="Active Clients"
             value={summary.totalClients.toString()}
             icon={Users}
           />
           <StatCard
-            title="Total Requests"
+            label="Total Requests"
             value={summary.totalRequests.toLocaleString()}
             icon={Activity}
           />
           <StatCard
-            title="Monthly Revenue"
+            label="Monthly Revenue"
             value={`$${summary.monthlyRevenue.toLocaleString()}`}
             icon={DollarSign}
           />
           <StatCard
-            title="Avg Latency"
+            label="Avg Latency"
             value={`${summary.avgLatency}ms`}
             icon={Zap}
           />
